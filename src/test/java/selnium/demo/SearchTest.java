@@ -24,39 +24,39 @@ public class SearchTest extends BaseTest {
         driver.findElement(By.name(button_search)).click();
     }
 
-//    @Test(testName = "Tìm kiếm bằng tên đầy đủ", dataProvider = "test-data-search-with-fullText", dataProviderClass = DataProviderClass.class)
-//    public void searchFullName(String data) throws InterruptedException {
-//        search(data);
-//        String result = driver.findElement(By.xpath("//*[@id=\"prinf_watch\"]/div/div/div[2]/p[1]")).getText();
-//        Assert.assertEquals(driver.getCurrentUrl(), URL_search);
-//        Assert.assertEquals(result, data);
-//        test = extent.createTest("Tìm kiếm bằng tên sản phẩm đầy đủ", "PASSED test case");
-//    }
+    @Test(testName = "Tìm kiếm bằng tên đầy đủ", dataProvider = "test-data-search-with-fullText", dataProviderClass = DataProviderClass.class)
+    public void searchFullName(String data) throws InterruptedException {
+        search(data);
+        String result = driver.findElement(By.xpath("//*[@id=\"prinf_watch\"]/div/div/div[2]/p[1]")).getText();
+        Assert.assertEquals(driver.getCurrentUrl(), URL_search);
+        Assert.assertEquals(result, data);
+        test = extent.createTest("Tìm kiếm bằng tên sản phẩm đầy đủ", "PASSED test case");
+    }
 
-    //    @Test(testName = "Tim kiếm bằng với tên sản phẩm không tồn tại", dataProvider = "test-data-search-with-nonText",
-//    dataProviderClass = DataProviderClass.class)
-//    public void searchNoExistName(String data) throws InterruptedException {
-//        search(data);
-//        boolean flag;
-//        try
-//        {
-//            driver.switchTo().alert().getText();
-//            Reporter.log("Launching Google Chrome Driver for this test");
-//            flag= true;
-//        }   // try
-//        catch (NoAlertPresentException Ex)
-//        {
-//            flag= false;
-//        }
-//        Reporter.log( driver.switchTo().alert().getText());
-//        //        check xem có xuất hiện alert thông báo serch không thành công
-//        Assert.assertTrue(flag);
-//        Assert.assertEquals(driver.switchTo().alert().getText(),"Không có sản phẩm phù hợp");
-//        test = extent.createTest("Tìm kiếm bằng tên sản phẩm không tồn tại", "PASSED test case");
-//    }
+        @Test(testName = "Tim kiếm bằng với tên sản phẩm không tồn tại", dataProvider = "test-data-search-with-nonText",
+    dataProviderClass = DataProviderClass.class)
+    public void searchNoExistName(String data) throws InterruptedException {
+        search(data);
+        boolean flag;
+        try
+        {
+            driver.switchTo().alert().getText();
+            Reporter.log("Launching Google Chrome Driver for this test");
+            flag= true;
+        }   // try
+        catch (NoAlertPresentException Ex)
+        {
+            flag= false;
+        }
+        Reporter.log( driver.switchTo().alert().getText());
+        //        check xem có xuất hiện alert thông báo serch không thành công
+        Assert.assertTrue(flag);
+        Assert.assertEquals(driver.switchTo().alert().getText(),"Không có sản phẩm phù hợp");
+        test = extent.createTest("Tìm kiếm bằng tên sản phẩm không tồn tại", "PASSED test case");
+    }
     @Test(testName = "Tim kiếm bằng với tên sản phẩm có chứa chuỗi nhập vào", dataProvider = "test-data-search-with-nearlyText",
             dataProviderClass = DataProviderClass.class)
-    public void searchNoExistName(String data) throws InterruptedException {
+    public void searchWithSmallString(String data) throws InterruptedException {
         search(data);
         WebElement countProduct = driver.findElement(By.xpath("//*[@id=\"prinf_watch\"]"));
         int numberOfChilds = Integer.parseInt(countProduct.getAttribute("childElementCount"));

@@ -15,6 +15,7 @@ public class DataProviderClass {
                 {"Đồng hồ Benley BL1839"},{"Đồng hồ Beley BL1831"}
         };
     }
+
     @BeforeMethod
     @DataProvider(name = "test-data-search-with-nonText")
     public static Object[][] dataSearch2(){
@@ -22,6 +23,7 @@ public class DataProviderClass {
                 {"Đồng hồ Rolex"},  {"Đồng hồ 3$"}
         };
     }
+
     @BeforeMethod
     @DataProvider(name = "test-data-search-with-nearlyText")
     public static Object[][] dataSearch3(){
@@ -29,4 +31,5 @@ public class DataProviderClass {
                 {"Đồng hồ "},{"Đồng"},{"Tissot"},{"T0"}
         };
     }
+
 }
