@@ -17,11 +17,11 @@ import org.testng.annotations.*;
 
 public class BaseTest {
 
-     ExtentHtmlReporter htmlReporter;
+    ExtentHtmlReporter htmlReporter;
 
-     ExtentReports extent;
+    ExtentReports extent;
     //helps to generate the logs in test report.
-      ExtentTest test;
+    ExtentTest test;
 
 
     WebDriver driver;
@@ -35,11 +35,11 @@ public class BaseTest {
     }
 
 
-    @Parameters({ "OS", "browser" })
+    @Parameters({"OS", "browser"})
     @BeforeTest
     public void startReport(String OS, String browser) {
         // initialize the HtmlReporter
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/testReport.html");
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/testReport.html");
 
         //initialize ExtentReports and attach the HtmlReporter
         extent = new ExtentReports();
@@ -63,17 +63,14 @@ public class BaseTest {
     @AfterMethod
     public void getResult(ITestResult result) {
         System.out.println(result);
-        if(result.getStatus() == ITestResult.FAILURE) {
-            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
+        if (result.getStatus() == ITestResult.FAILURE) {
+            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " FAILED ", ExtentColor.RED));
             test.fail(result.getThrowable());
-        }
-        else if(result.getStatus() == ITestResult.SUCCESS) {
-            test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" PASSED ", ExtentColor.GREEN));
-        }
-        else {
-            test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" SKIPPED ", ExtentColor.ORANGE));
+        } else if (result.getStatus() == ITestResult.SUCCESS) {
+            test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " PASSED ", ExtentColor.GREEN));
+        } else {
+            test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
             test.skip(result.getThrowable());
-
         }
         driver.quit();
     }

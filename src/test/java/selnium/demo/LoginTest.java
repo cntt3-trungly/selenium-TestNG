@@ -59,7 +59,7 @@ public class LoginTest extends BaseTest {
 //    }
 
     /*--- Đăng nhập bằng tài khoản admin ---*/
-    @Test(priority = 9 ,testName = "Đăng nhập bằng tài khoản admin")
+    @Test(priority = 1 ,testName = "Đăng nhập bằng tài khoản admin")
     public void loginByAdmin() throws InterruptedException {
         login("admin", "123456");
         //Set tên test case trong file html
@@ -75,7 +75,7 @@ public class LoginTest extends BaseTest {
     }
 
     /*--- Đăng nhập bằng tài khoản user hợp lệ ---*/
-    @Test(priority = 8,testName = "Đăng nhập bằng tài khoản user hợp lệ")
+    @Test(priority = 2,testName = "Đăng nhập bằng tài khoản user hợp lệ")
     public void loginByUserInvalidUser() throws InterruptedException {
         login("quangtrung", "1234567");
         String name = driver.findElement(By.id(menu_account)).getText();
@@ -85,7 +85,7 @@ public class LoginTest extends BaseTest {
     }
 
     /*--- Đăng nhập bằng tài khoản với username hoặc password không đúng */
-    @Test(priority = 7,testName = "Đăng nhập bằng tài khoản với username không đúng")
+    @Test(priority = 3,testName = "Đăng nhập bằng tài khoản với username không đúng")
     public void loginWithValidAccountUsername() throws InterruptedException {
         login("helloo", "1234567");
         String status = driver.findElement(By.id(status_Login)).getText();
@@ -95,7 +95,7 @@ public class LoginTest extends BaseTest {
     }
 
     /*--- Đăng nhập bằng tài khoản với username hoặc password không đúng */
-    @Test(priority = 6,testName = "Đăng nhập bằng tài khoản với password không đúng")
+    @Test(priority = 4,testName = "Đăng nhập bằng tài khoản với password không đúng")
     public void loginWithValidAccountPassword() throws InterruptedException {
         login("hellooo", "123456");
         String status = driver.findElement(By.id(status_Login)).getText();
@@ -116,7 +116,7 @@ public class LoginTest extends BaseTest {
 
 
     /*--- Đăng Nhập bằng tài khoản với username trống */
-    @Test(priority = 4,testName = "Đăng Nhập bằng tài khoản với username trống")
+    @Test(priority = 5,testName = "Đăng Nhập bằng tài khoản với username trống")
     public void loginWithUsernameBlankField() throws InterruptedException {
         login("", "trung123");
         String status = driver.findElement(By.id(status_Login)).getText();
@@ -126,7 +126,7 @@ public class LoginTest extends BaseTest {
     }
 
     /*--- Đăng nhập bằng tài khoản với password trống */
-    @Test(priority = 3,testName = "Đăng nhập bằng tài khoản với password trống")
+    @Test(priority = 6,testName = "Đăng nhập bằng tài khoản với password trống")
     public void loginWithPasswordBlankField() throws InterruptedException {
         login("quangtrung", "");
         String status = driver.findElement(By.id(status_Login)).getText().toLowerCase();
@@ -136,7 +136,7 @@ public class LoginTest extends BaseTest {
     }
 
     /*--- Đăng nhập bằng tài khoản với username ít hơn 6 kí tự */
-    @Test(priority = 2,testName = "Đăng nhập bằng tài khoản với username ít hơn 6 kí tự")
+    @Test(priority = 7,testName = "Đăng nhập bằng tài khoản với username ít hơn 6 kí tự")
     public void loginWithUsernameNotEnough() throws InterruptedException {
         login("123", "quangtrung");
         String status = driver.findElement(By.id(status_Login)).getText().toLowerCase();
@@ -146,7 +146,7 @@ public class LoginTest extends BaseTest {
     }
 
     /*--- Đăng nhập bằng tài khoản với password ít hơn 6 kí tự */
-    @Test(priority = 1,testName = "Đăng nhập bằng tài khoản với password ít hơn 6 kí tự")
+    @Test(priority = 8,testName = "Đăng nhập bằng tài khoản với password ít hơn 6 kí tự")
     public void loginWithPasswordNotEnough() throws InterruptedException {
         login("quangtrung", "1234");
         String status = driver.findElement(By.id(status_Login)).getText().toLowerCase();
