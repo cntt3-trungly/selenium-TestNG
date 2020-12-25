@@ -105,6 +105,7 @@ public class AssignmentFlipkart {
         //Get List of All values from Hash Map. Right now we do not need it so commenting
         //Collection<String> allValues = map_final_products.values();
         //ArrayList<String> array_list_values_product_names = new ArrayList<String>(allValues);
+
 //        var account = [{
 //            id: 0,
 //                    username: "admin",

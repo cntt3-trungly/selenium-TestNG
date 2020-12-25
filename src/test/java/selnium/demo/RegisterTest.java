@@ -20,6 +20,7 @@ public class RegisterTest extends BaseTest {
     String status_message2 = "Vui lòng nhập username và password lớn hơn 6 kí tự";
     String status_message3 = "Vui lòng nhập đầy đủ thông tin";
     String status_message4 = "Vui lòng nhập thông tin không chứa dấu";
+    String status_message5 = "Vui lòng không nhập cứ tự đặt biệt hoặc username và password lớn hơn 6 kí tự";
 
 
     String testName_case1 = "Đăng ký bằng tài khoản hợp lệ";
@@ -28,10 +29,7 @@ public class RegisterTest extends BaseTest {
     String testName_case4 = "Đăng ký với username ít hơn 6 kí tự";
     String testName_case5 = "Đăng ký với rePassword không đúng";
     String testName_case6 = "Đăng ký với username hoặc passwork để trống";
-    String testName_case7 = "Đăng ký với username hoặc passwork để trống";
-    String testName_case8 = "Đăng nhập bằng tài khoản với username ít hơn 6 kí tự";
-    String testName_case9 = "Đăng nhập bằng tài khoản với password ít hơn 6 kí tự";
-
+    
 
     public void signUp(String userName, String password, String repassword) throws InterruptedException {
         driver.findElement(By.id(menu_login)).click();
@@ -121,7 +119,7 @@ public class RegisterTest extends BaseTest {
     /*--- Đăng ký với username hoặc passwork để trống ---*/
     @Test(priority = 6 ,testName = "Đăng ký với username hoặc passwork để trống")
     public void signUpValidAccount5() throws InterruptedException {
-        signUp("hoang", "1234567","12345");
+        signUp("hoang", "","12345");
         //Set tên test case trong file html
         test = extent.createTest(testName_case6, "PASSED test case");
         //trang đăng kí vào phải trùng địa chỉ index
@@ -142,7 +140,7 @@ public class RegisterTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), URL_index);
 
         String status = driver.findElement(By.id(status_SignUp)).getText();
-        Assert.assertEquals(status,status_message4);
+        Assert.assertEquals(status,status_message5);
         Thread.sleep(1000);
     }
 
