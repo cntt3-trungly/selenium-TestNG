@@ -87,9 +87,9 @@ public class LoginTest extends BaseTest {
     public void loginWithValidAccountUsername() throws InterruptedException {
         login("helloo", "1234567");
         String status = driver.findElement(By.id(status_Login)).getText();
-        test = extent.createTest(testName_case3, "PASSED test case");
         Assert.assertEquals(status, errorMessage_validAccount);
         Assert.assertEquals(driver.getCurrentUrl(), URL_login);
+        test = extent.createTest(testName_case3, "PASSED test case");
     }
 
     /*--- Đăng nhập bằng tài khoản với username hoặc password không đúng */

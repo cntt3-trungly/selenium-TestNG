@@ -105,6 +105,27 @@ public class AssignmentFlipkart {
         //Get List of All values from Hash Map. Right now we do not need it so commenting
         //Collection<String> allValues = map_final_products.values();
         //ArrayList<String> array_list_values_product_names = new ArrayList<String>(allValues);
+//        var account = [{
+//            id: 0,
+//                    username: "admin",
+//                    password: "123456",
+//                    level: 1
+//        }, {
+//            id: 1,
+//                    username: "quangtrung",
+//                    password: "1234567",
+//                    level: 0
+//        }, {
+//            id: 2,
+//                    username: "abcdef",
+//                    password: "123456",
+//                    level: 0
+//        },  {
+//            id: 3,
+//                    username: "nhatnguyen1",
+//                    password: "nhatnguyen",
+//                    level: 0
+//        }];
 
     }
 

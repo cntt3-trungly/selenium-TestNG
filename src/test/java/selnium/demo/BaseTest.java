@@ -27,11 +27,13 @@ public class BaseTest {
     WebDriver driver;
     public static final String URL_login = "file:///C:/Users/Admin/Desktop/dongho_cuong/index.html";
     public static final String URL_index = "file:///C:/Users/Admin/Desktop/dongho_cuong/index.html";
+    public static final String URL_search = "file:///C:/Users/Admin/Desktop/dongho_cuong/index.html?button-search=";
 
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
         driver.get(URL_login);
+        driver.manage().window().maximize();
     }
 
 
@@ -72,7 +74,7 @@ public class BaseTest {
             test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
             test.skip(result.getThrowable());
         }
-
+        driver.quit();
     }
 
     @AfterTest
