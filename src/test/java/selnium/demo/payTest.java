@@ -86,7 +86,7 @@ public class payTest extends BaseTest {
     /*--- Thanh toán lúc đã đăng nhập đã có số điện thoại và địa chỉ ---*/
     @Test(priority = 1, testName = "Thanh toán lúc đã đăng nhập đã có số điện thoại và địa chỉ")
     public void payWithLogin() throws InterruptedException {
-        login("admin", "123456");
+        login("quangtrung", "1234567");
         getPruduct();
         clickCart();
         clickPay();
@@ -117,7 +117,7 @@ public class payTest extends BaseTest {
     /*--- Thanh toán lúc đã đăng nhập không có số điện thoại và địa chỉ ---*/
     @Test(priority = 2, testName = "Thanh toán lúc đã đăng nhập không có số điện thoại và địa chỉ")
     public void payWithLogin2() throws InterruptedException {
-        login("admin", "123456");
+        login("quangtrung", "1234567");
         getPruduct();
         clickCart();
         clickPay();
@@ -149,7 +149,7 @@ public class payTest extends BaseTest {
     /*--- Thanh toán lúc chưa đặt hàng---*/
     @Test(priority = 3, testName = "Thanh toán lúc chưa đặt hàng")
     public void payWithLoginWithoutProduct() throws InterruptedException {
-        login("admin", "123456");
+        login("quangtrung", "1234567");
         clickCart();
         clickPay();
         boolean flag;
