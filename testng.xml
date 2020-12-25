@@ -7,8 +7,10 @@
 
     <test name="Extent Report Test">
         <classes>
-<!--            <class name="selnium.demo.LoginTest"/>-->
-            <class name="selnium.demo.SearchTest"/>
+      <!--     <class name="selnium.demo.LoginTest"/>
+           <class name="selnium.demo.SearchTest"/>-->
+            <class name="selnium.demo.payTest"/>
+
         </classes>
     </test>
 </suite>

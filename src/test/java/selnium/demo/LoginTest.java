@@ -15,8 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginTest extends BaseTest {
 
-
-
     String user_login = "usernameLogin";
     String user_pass = "passwordLogin";
     String submit_Btn = "submit-login";

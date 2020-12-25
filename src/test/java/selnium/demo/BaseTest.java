@@ -72,7 +72,7 @@ public class BaseTest {
             test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " SKIPPED ", ExtentColor.ORANGE));
             test.skip(result.getThrowable());
         }
-        driver.quit();
+
     }
 
     @AfterTest
